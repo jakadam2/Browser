@@ -13,7 +13,7 @@ class ResultWindow(QWidget):
         self.ans = ''
         self.nr_of_article = 0
         self.content_label = None
-
+        print(result[:20])
         self.setup()
         
     def setup(self):

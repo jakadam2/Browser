@@ -48,14 +48,3 @@ class ArticleFinder:
     def get(self,name):
         return self.name_dict[name]
         
-'''  
-class Transformator:
-    def __init__(self) -> None:
-        self.stemer = nltk.stem.PorterStemmer()
-        self.stop_words = set(nltk.corpus.stopwords.words('english'))
-
-    def transform(self,text):
-        tokens = set(nltk.tokenize.WordPunctTokenizer().tokenize(text))
-        stemed_tokens = [self.stemer.stem(token) for token in tokens if len(token) > 3 and token.lower() not in self.stop_words]
-        return stemed_tokens
-        '''
