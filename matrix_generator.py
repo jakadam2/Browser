@@ -6,7 +6,9 @@ from sklearn.decomposition import TruncatedSVD
 from tools import DataLoader,Transformator
 import nltk
 
+
 class MatrixGenerator:
+
     def __init__(self,file_name,k) -> None:
         self.contents = None
         self.svd = None
@@ -36,7 +38,7 @@ class MatrixGenerator:
     def __create_matrix(self):
         matrix = scipy.sparse.lil_matrix((len(self._tokens_dict),self.number_of_articles))
         stemer = nltk.stem.PorterStemmer()
-        gen = DataLoader('corpus.txt')
+        gen = DataLoader('./resources/data/corpus.txt')
         stop_words = set(nltk.corpus.stopwords.words('english'))
         for i in range(self.number_of_articles):
             tokens = nltk.tokenize.WordPunctTokenizer().tokenize(gen.next())

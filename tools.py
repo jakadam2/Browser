@@ -1,6 +1,8 @@
 import nltk
 
+
 class DataLoader:
+
     def __init__(self,file_name) -> None:
         self.file = open(file_name,encoding = 'utf8')
         self.contents = []
@@ -16,6 +18,7 @@ class DataLoader:
     
 
 class Transformator:
+
     def __init__(self) -> None:
         self.stemer = nltk.stem.PorterStemmer()
         self.stop_words = set(nltk.corpus.stopwords.words('english'))
@@ -25,7 +28,9 @@ class Transformator:
         stemed_tokens = [self.stemer.stem(token) for token in tokens if len(token) > 3 and token.lower() not in self.stop_words]
         return stemed_tokens
     
+    
 class ArticleFinder:
+
     def __init__(self,name) -> None:
         self.name = name
         self.name_dict = self.create_dict(name)

@@ -3,6 +3,7 @@ from question_loader import QueastionLoader
 
 
 class Browser:
+    
     def __init__(self,file_name) -> None:
         matrix_gen = MatrixGenerator(file_name,1000)
         self.question_loader = QueastionLoader(matrix_gen.get_svdc(),matrix_gen.get_tokens())
